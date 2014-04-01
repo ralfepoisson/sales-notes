@@ -1,0 +1,225 @@
+/* 
+ * This stylesheet is meant for testing purposes only 
+ * and is linked to the test.html page
+ * 				
+ */
+
+/* ============ Hover Dots =========== */
+.testbox {
+	position: relative;
+	height: 400px;
+	width: 600px;
+	border: 1px dashed #909090;
+}
+
+.maintest {
+	position: relative;
+	top: 150px;
+	left: 243px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #c5c5c5;
+	border-radius: 50px;
+}
+
+.cc1, .cc2, .cc3, .cc4, .cc5, .cc6 {
+	background-color: #1596D0;
+	height: 20px;
+	width: 20px;
+	border-radius: 50px;
+	position: absolute;
+	transition: all ease 0.6s;
+	top: 39px;
+	left: 41px;	
+}
+
+.maintest:hover .cc1 {
+	transition-delay: 0.2s;
+    left: -244px;
+    top: -150px;
+}
+
+.maintest:hover .cc2 {
+	transition-delay: 0.5s;
+    left: 40px;
+    top: -150px;
+}
+
+.maintest:hover .cc3 {
+	transition-delay: 0.3s;
+	left: 335px;
+	top: -150px;
+}
+
+.maintest:hover .cc4 {
+	transition-delay: 0.7s;
+	left: 335px;
+    top: 227px;
+}
+
+.maintest:hover .cc5 {
+	transition-delay: 0.2s;
+	left: 40px;
+    top: 227px;
+}
+.maintest:hover .cc6 {
+	transition-delay: 0.2s;
+	left: -244px;
+    top: 227px;
+}
+/* ============ CSS3 Logo =========== */
+.info, .topLeft-blue, .topRight,
+.topLeft-white, .bottomLeft, .bottomRight {
+	position: absolute;
+	-webkit-transition: all 0.6s ease 0s;
+	   -moz-transition: all 0.6s ease 0s;
+		-ms-transition: all 0.6s ease 0s;
+		 -o-transition: all 0.6s ease 0s;
+			transition: all 0.6s ease 0s;	
+}
+
+.logo-box {
+	position: relative;	
+	width: 106px;
+	height: 106px;
+	left: 235px;
+    top: 145px;
+}
+
+.logo-box .topLeft-blue {	
+	background: #1894D1;
+	width: 60px;
+	height: 60px;
+	top: 0px;
+	left: 0px;
+	border-radius: 0 30px;
+}
+.logo-box:hover .topLeft-blue {	
+	top: -100px;
+	left: -100px;		
+}
+.logo-box .topRight {
+	background: #96BFE5;
+	width: 20px;
+	height: 20px;
+	top: 40px;
+	left: 65px;
+	border-radius: 8px 0;
+}
+.logo-box:hover .topRight {
+	top: -100px;
+	left: 200px;
+}
+.logo-box .topLeft-white {
+	background: #fff;
+	width: 30px;
+	height: 30px;
+	top: 26px;
+	left: 26px;
+	border-radius: 0 15px;
+}
+.logo-box:hover .topLeft-white {
+	top: -74px;
+	left: -74px;
+}
+.logo-box .bottomLeft {
+	background: #96BFE5;
+	width: 30px;
+	height: 30px;
+	top: 65px;
+	left: 30px;
+	border-radius: 12px 0;
+}
+.logo-box:hover .bottomLeft {
+	top: 200px;
+	left: -100px;
+}
+.logo-box .bottomRight {
+	background: #1894D1;
+	width: 40px;
+	height: 40px;
+	top: 65px;
+	left: 65px;
+	border-radius: 0 20px;
+}
+.logo-box:hover .bottomRight {
+	top: 200px;
+	left: 200px;
+}
+
+.info {
+	background: #fff;
+	border: 1px solid #dedede;
+	border-radius: 80px;
+	width: 0px;
+	height: 0px;
+	top: 65px;
+	left: 65px;
+	opacity: 0;
+}
+
+.logo-box p {
+	position: relative;
+	text-align: center;
+	color: #fff;
+	font-size: 1px;
+	transition: all 0.5s ease;
+	left: 13px;
+	opacity: 0;
+	top: 26px;
+	
+}
+
+.logo-box:hover .info {
+	width: 130px;
+	height: 130px;
+	top: 0px;
+	left: 0px;
+	opacity: 1;
+}
+
+.logo-box:hover p {
+	font-size: 14px;
+	color: #c0c0c0;
+	opacity: 1;	
+}
+/* ============ CSS3 ============= */
+
+@-webkit-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@-moz-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@-ms-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@-o-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+.bounce-box {
+	background: #c5c5c5;
+	position: relative;
+	display: block;
+	width: 200px;
+	height: 150px;
+	margin: 10px 20px;
+	-webkit-animation: bounce linear 2s infinite;
+	-moz-animation: bounce linear 2s infinite;
+	-ms-animation: bounce linear 2s infinite;
+	-o-animation: bounce linear 2s infinite;
+	animation: bounce linear 2s infinite;
+}

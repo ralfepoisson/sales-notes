@@ -1,0 +1,48 @@
+@fontface {
+	font-family: 'font-name';
+	src: url('../fonts/font-name.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/font-name.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/font-name.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/font-name.ttf')  format('truetype'); /* Safari, Android, iOS */	 
+}
+
+@-webkit-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@-moz-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@-ms-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@-o-keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+@keyframes bounce{
+	0% { bottom: -20px; }
+	50% { bottom: 20px; }
+	100% { bottom: -20px; }
+}
+.bounce-box {
+	background: #c5c5c5;
+	position: relative;
+	display: block;
+	width: 200px;
+	height: 150px;
+	margin: 10px 20px;
+	
+	/* ------ Animation ------ */
+	-webkit-animation: bounce linear 2s infinite;
+	-moz-animation: bounce linear 2s infinite;
+	-ms-animation: bounce linear 2s infinite;
+	-o-animation: bounce linear 2s infinite;
+	animation: bounce linear 2s infinite;
+}

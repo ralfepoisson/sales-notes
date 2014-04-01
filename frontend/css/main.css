@@ -1,0 +1,164 @@
+
+h1 {
+	margin-bottom: 25px;
+}
+
+label {
+	width: 100%;
+}
+
+table.table {
+	margin-top: 20px;
+}
+
+.navbar-brand {
+	font-size: 24px;
+}
+
+#week_listing {
+	margin-bottom: 20px;
+}
+
+.week_days_list {
+	border-left: 1px #DDD solid;
+	border-right: 1px #DDD solid;
+	border-bottom: 1px #DDD solid;
+}
+
+.workout_week {
+	width: 100%;
+}
+
+#superset_listing {
+	margin-bottom: 20px;
+	float: left;
+}
+
+.superset {
+	width: 100%;
+}
+
+.superset_exercises_list {
+	float: left;
+	padding: 10px;
+	border-left: 1px #DDD solid;
+	border-right: 1px #DDD solid;
+	border-bottom: 1px #DDD solid;
+	width: 100%;
+	min-height: 100px;
+}
+
+.drag_handle {
+	background-image: url(../img/drag_handle.png);
+	background-size: 15px 15px;
+	background-repeat: no-repeat;
+	background-color: #FFF;
+	height: 15px;
+	width: 88px;
+	float: left;
+	margin-top: -14px;
+	margin-left: -5px;
+	cursor: move;
+}
+
+.exercise {
+	float: left;
+	width: 90px;
+	height: 90px;
+	margin: 10px;
+	padding: 5px;
+	text-align: center;
+	border: 1px #AAA solid;
+	background-color: #F1F1F1;
+	padding-top: 14px;
+	font-size: 12px;
+}
+
+.exercise_list .disabled {
+	display: none;
+}
+
+.dropdown-menu li a {
+	cursor: pointer;
+}
+
+ul.workout_week li {
+	cursor: pointer;
+}
+
+a.delete {
+	color: red;
+	cursor: pointer;
+}
+
+a.delete img {
+	margin-left: 10px;
+	margin-top: -3px;
+}
+
+.workout_week li.active {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#equipment_list {
+	margin-top: 20px;
+}
+
+.exercise_equipment_item {
+	padding: 5px;
+	width: 100%;
+	border: 1px solid #AAA;
+	margin-bottom: 10px;
+}
+
+.exercise_equipment_item:hover {
+	background-color: #F1F1F1;
+}
+
+/* ================== Footer ===================== */
+
+.footer {
+	color: #AAA;
+}
+
+/* ================== @media Query ===================== */
+
+@media (max-width: 600px) {
+	.input-prepend input, .input-prepend textarea, .input-append input, .input-append textarea, .input-prepend input[class*="span"], 
+	.input-append input[class*="span"] {
+    	display: inline-block;
+    	width: auto;
+	}	
+}
+
+#contact_listing {
+	margin-top: 20px;
+}
+
+.contact_icon {
+	float: left;
+	text-align: center;
+	border: 1px solid #DDD;
+	padding: 10px;
+	margin: 0 10px 10px 0;
+	height: 100px;
+	width: 130px;
+	vertical-align: middle;
+	padding-top: 20px;
+}
+
+.contact_icon span {
+	margin-bottom: 15px;
+}
+
+.contact_icon:hover {
+	background-color: #E1E1E1;
+	border: 1px solid #666;
+	font-weight: bold;
+}
+
+#contact_listing .disabled {
+	display: none;
+}
+

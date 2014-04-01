@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h4 class="panel-title">
+			<a data-toggle="collapse" data-parent="#accordion" href="#collapse{{id}}">
+				<span class="glyphicon glyphicon-folder-open" style="margin-right:20px;"></span> {{title}}
+			</a>
+		</h4>
+	</div>
+	<div id="collapse{{id}}" class="panel-collapse collapse">
+		<div class="panel-body" id="menu_item_{{id}}">
+			{{contents}}
+			<br>
+			<div class="btn" onclick="add_child_folder({{id}});"><span class="glyphicon glyphicon-plus" style="margin-right: 20px;"></span> New Item</div>
+		</div>
+	</div>
+</div>
+

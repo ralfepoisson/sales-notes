@@ -1,0 +1,156 @@
+<ol class="breadcrumb">
+  <li><a href="./">Home</a></li>
+  <li class="active">Workouts</li>
+</ol>
+
+<div class="container-fluid">
+	
+	<div class="row-fluid">
+		<h1>Workouts</h1>
+	</div><!-- /.row-fluid -->
+	
+	<div class="row-fluid" style="margin-top: 20px;">
+		<!-- Folders -->
+		<div class="col-md-3">
+			<h2>Folders</h2>
+			<input  type="hidden" id="cur_folder" value="0">
+			<div id="folders">
+				{{folders}}
+			</div>
+			<div class="btn btn-default" onclick="add_folder_modal(0);"><span class="glyphicon glyphicon-folder-open"></span> Add Folder</div>
+		</div>
+		
+		<!-- Contacts -->
+		<div class="col-md-8" id="contacts_column" style="display:none;">
+			<h2>Contacts</h2>
+			<div class="row">
+				<a class="btn btn-default" onclick="$('#add_contact_modal').modal('show');"><span class="glyphicon glyphicon-user"></span> Add Contact</a>
+				<a class="btn btn-default" onclick="$('#add_company_modal').modal('show');"><span class="glyphicon glyphicon-briefcase"></span> Add Company</a>
+				<input type="text" id="contact_filter_text" onkeypress="auto_contact_filter();"> 
+				<input type="button" class="btn btn-primary" value="Filter" onclick="contact_filter();">
+			</div>
+			
+			<div id="contact_listing">
+			</div>
+		</div>
+</div>
+
+<!-- Modal: Add Company -->
+<div class="modal fade" id="add_company_modal" tabindex="-1" role="dialog" aria-labelledby="add_company_modal_label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="add_company_modal_label"><span class="glyphicon glyphicon-briefcase" style="margin-right: 20px;"></span> New Comapny</h4>
+			</div>
+			<div class="modal-body">
+				<form role="form">
+					<div class="form-group">
+						<strong>Company Name</strong><br>
+						<input class="form-control" type="text" id="new_company_name">
+					</div>
+				
+					<div class="form-group">
+						<strong>Address</strong><br>
+						<textarea class="form-control" id="new_company_address"></textarea>
+					</div>
+				
+					<div class="form-group">
+						<strong>Telephone</strong><br>
+						<input class="form-control" type="test" id="new_company_tel">
+					</div>
+				
+					<div class="form-group">
+						<strong>Fax</strong><br>
+						<input class="form-control" type="test" id="new_company_fax">
+					</div>
+				
+					<div class="form-group">
+						<strong>Email</strong><br>
+						<input class="form-control" type="email" id="new_company_email">
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="add_company();">Add</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal: Add Contact -->
+<div class="modal fade" id="add_contact_modal" tabindex="-1" role="dialog" aria-labelledby="contact_modal_label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="contact_modal_label"><span class="glyphicon glyphicon-user" style="margin-right: 20px;"></span> Add Contact</h4>
+			</div>
+			<div class="modal-body">
+				<form role="form">
+					<div class="form-group">
+						<strong>Company</strong><br>
+						<span id="company_select"></span>
+					</div>
+					
+					<div class="form-group">
+						<strong>Name</strong><br>
+						<select class="form-control" id="new_contact_title" style="width: 75px; display: inline;">
+							<option value="Mr.">Mr.</option>
+							<option value="Mrs.">Mrs.</option>
+							<option value="Miss.">Miss.</option>
+							<option value="Dr.">Dr.</option>
+						</select>
+						<input class="form-control" type="test" id="new_contact_firstname" placeholder="First Name" style="width: 200px; display: inline;"> 
+						<input class="form-control" type="test" id="new_contact_lastname" placeholder="Last Name" style="width: 200px; display: inline;">
+					</div>
+				
+					<div class="form-group">
+						<strong>Telephone</strong><br>
+						<input class="form-control" type="test" id="new_contact_tel">
+					</div>
+				
+					<div class="form-group">
+						<strong>Fax</strong><br>
+						<input class="form-control" type="test" id="new_contact_fax">
+					</div>
+				
+					<div class="form-group">
+						<strong>Email</strong><br>
+						<input class="form-control" type="email" id="new_contact_email">
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="add_contact();">Add</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal: Add Folder -->
+<div class="modal fade" id="add_folder_modal" tabindex="-1" role="dialog" aria-labelledby="folder_modal_label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="folder_modal_label"><span class="glyphicon glyphicon-folder-open" style="margin-right: 20px;"></span> Add Folder</h4>
+			</div>
+			<div class="modal-body">
+				<form role="form">
+					<div class="form-group">
+						<strong>New Folder</strong><br>
+						<input type="hidden" id="new_folder_parent" value="0">
+						<input class="form-control" type="test" id="new_folder_name">
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="add_folder();">Add</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

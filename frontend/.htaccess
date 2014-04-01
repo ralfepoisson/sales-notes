@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+ 
+RewriteEngine On
+RewriteBase /
+
+RewriteRule    ^([A-Za-z0-9-]+)/?$    index.php?p=$1    [NC,L]    # Process Controllers
+RewriteRule    ^([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$    index.php?p=$1&action=$2    [NC,L]    # Process Controllers and Controller Actions
