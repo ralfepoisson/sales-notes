@@ -54,10 +54,10 @@ function add_folder() {
 	
 	// Update DOM
 	if (!parent_id) {
-		$("#folder").append(new_html);
+		$("#folders").append(new_html);
 	}
 	else {
-		$("#menu_item_" + parent_id).append(new_html);
+		$("#menu_item_" + parent_id + "_contents").append(new_html);
 	}
 	
 	// Clear Form
@@ -101,7 +101,7 @@ function add_company() {
 	$("#new_company_email").val("");
 	
 	// Hide Modal
-	$("#add_contact_modal").modal("hide");
+	$("#add_company_modal").modal("hide");
 	
 	// Reload Contacts
 	load_contacts(get_cur_folder());
@@ -219,3 +219,63 @@ function auto_contact_filter(evn) {
 		document.getElementById("contact_filter_text").focus();
 	}
 }
+
+function view_company(company_id) {
+	// Log Activity
+	logg(" [*] Viewing Company Profile for Company #" + company_id);
+	
+	// Get Name
+	var name = ajax_get_data("ajax.php?action=get_company_name&id=" + company_id);
+	$("#view_company_name").html(name);
+	logg(" - Name: " + name);
+	
+	// Get Profile
+	var profile = ajax_get_data("ajax.php?action=get_company_profile&id=" + company_id);
+	$("#view_company_profile").html(profile);
+	
+	// Show Modal
+	logg(" - Displaying modal");
+	$("#view_company_modal").modal("show");
+	logg(" - Done.");
+}
+
+function view_contact(contact_id) {
+	// Log Activity
+	logg(" [*] Viewing Company Profile for Company #" + company_id);
+	
+	// Get Name
+	var name = ajax_get_data("ajax.php?action=get_contact_name&id=" + contact_id);
+	$("#view_contact_name").html(name);
+	logg(" - Name: " + name);
+	
+	// Get Profile
+	var profile = ajax_get_data("ajax.php?action=get_contact_profile&id=" + contact_id);
+	$("#view_contact_profile").html(profile);
+	
+	// Show Modal
+	logg(" - Displaying modal");
+	$("#view_contact_modal").modal("show");
+	logg(" - Done.");
+}
+
+function delete_folder(e, parent_id, folder_id) {
+	// Prevent Default Behaviour
+	e.stopPropagation();
+	
+	// Log Activity
+	logg(" [*] Deleting Sub Folder");
+	logg(" - Parent Id: " + parent_id);
+	logg(" - Folder Id: " + folder_id);
+	
+	// Hide the element
+	if (parent_id) {
+		$("#sub_folder_" + folder_id).css("display", "none");
+	}
+	else {
+		$("#folder_" + folder_id).css("display", "none");
+	}
+	
+	// Delete on Server
+	ajax_get_data("ajax.php?action=delete_folder&parent_id=" + parent_id + "&id=" + folder_id);
+}
+

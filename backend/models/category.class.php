@@ -68,7 +68,8 @@ class Category extends Model {
 						$file											= dirname(dirname(dirname(__FILE__))) . "/frontend/html/contacts/category_item.html";
 						$vars											= array(
 																					"title"		=> $child->name,
-																					"id"		=> $child->uid
+																					"id"		=> $child->uid,
+																					"parent_id"	=> $parent->uid
 																				);
 						$template										= new Template($file, $vars);
 						$children_html									.= $template->toString();

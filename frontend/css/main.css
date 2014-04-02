@@ -136,6 +136,10 @@ a.delete img {
 	margin-top: 20px;
 }
 
+#contact_listing .disabled {
+	display: none;
+}
+
 .contact_icon {
 	float: left;
 	text-align: center;
@@ -158,7 +162,22 @@ a.delete img {
 	font-weight: bold;
 }
 
-#contact_listing .disabled {
+.btn:hover .btn_trash {
+	display: inline;
+}
+
+.panel-title:hover .btn_trash {
+	display: inline;
+}
+
+.btn_trash {
+	margin-left: 20px;
+	color: #666;
 	display: none;
 }
+
+.btn_trash:hover {
+	color: #000
+}
+
 

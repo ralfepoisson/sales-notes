@@ -44,8 +44,12 @@ class Contact extends Model {
 	/**
 	 * Something
 	 */
-	function get_name() {
+	public function get_name() {
 		return $this->title . " " . $this->first_name . " " . $this->last_name;
+	}
+	
+	public function get_profile() {
+		
 	}
 }
 

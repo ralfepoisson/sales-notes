@@ -1,12 +1,12 @@
 <ol class="breadcrumb">
   <li><a href="./">Home</a></li>
-  <li class="active">Workouts</li>
+  <li class="active">Contacts</li>
 </ol>
 
 <div class="container-fluid">
 	
 	<div class="row-fluid">
-		<h1>Workouts</h1>
+		<h1>Contact Manager</h1>
 	</div><!-- /.row-fluid -->
 	
 	<div class="row-fluid" style="margin-top: 20px;">
@@ -154,3 +154,42 @@
 		</div><!-- /.modal-content -->
 	</div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<!-- Modal: View Company -->
+<div class="modal fade" id="view_company_modal" tabindex="-1" role="dialog" aria-labelledby="view_company_modal_label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="view_company_modal_label"><span class="glyphicon glyphicon-briefcase" style="margin-right: 20px;"></span> <span id="view_company_name"></span></h4>
+			</div>
+			<div class="modal-body">
+				<span id="view_company_profile"></span>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="update_company();">Save</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal: View Contact -->
+<div class="modal fade" id="view_contact_modal" tabindex="-1" role="dialog" aria-labelledby="view_contact_modal_label" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="view_contact_modal_label"><span class="glyphicon glyphicon-user" style="margin-right: 20px;"></span> <span id="view_contact_name"></span></h4>
+			</div>
+			<div class="modal-body">
+				<span id="view_company_profile"></span>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" onclick="update_contact();">Save</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+

@@ -41,11 +41,9 @@ class Company extends Model {
 		}
 	}
 	
-	/**
-	 * Something
-	 */
-	function something() {
-		// ...
+	
+	public function get_profile() {
+		
 	}
 }
 

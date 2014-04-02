@@ -138,19 +138,15 @@ function new_folder() {
 	$obj->save();
 	
 	# Generate HTML
-	if (sizeof($contacts)) {
-		foreach ($contacts as $contact) {
-			# Generate HTML
-			$file														= (!$parent)? dirname(__FILE__) . "/html/contacts/category_menu_item.html" : dirname(__FILE__) . "/html/contacts/category_item.html";
-			$vars														= array(
+	$file																= (!$parent)? dirname(__FILE__) . "/html/contacts/category_menu_item.html" : dirname(__FILE__) . "/html/contacts/category_item.html";
+	$vars																= array(
 																					"title"		=> $obj->name,
 																					"contents"	=> "",
-																					"id"		=> $obj->uid
+																					"id"		=> $obj->uid,
+																					"parent_id"	=> $obj->parent_id
 																				);
-			$template													= new Template($file, $vars);
-			$html														.= $template->toString();
-		}
-	}
+	$template															= new Template($file, $vars);
+	$html																= $template->toString();
 	
 	# Return HTML
 	print $html;
@@ -165,6 +161,62 @@ function get_company_select() {
 	
 	# Return HTML
 	print $html;
+}
+
+function get_company_name() {
+	# Get GET Data
+	$id																	= Form::get_int("id");
+	
+	# Get Data
+	$company															= new Company($id);
+	
+	# Return Name
+	print $company->name;
+}
+
+function get_company_profile() {
+	# Get GET Data
+	$id																	= Form::get_int("id");
+	
+	# Get Data
+	$company															= new Company($id);
+	
+	# Return Name
+	print $company->get_profile();
+}
+
+function get_contact_name() {
+	# Get GET Data
+	$id																	= Form::get_int("id");
+	
+	# Get Data
+	$contact															= new Contact($id);
+	
+	# Return Name
+	print $contact->get_name();
+}
+
+function get_contact_profile() {
+	# Get GET Data
+	$id																	= Form::get_int("id");
+	
+	# Get Data
+	$contact															= new Contact($id);
+	
+	# Return Name
+	print $contact->get_profile();
+}
+
+function delete_folder() {
+	# Get GET Data
+	$parent_id															= Form::get_int("parent_id");
+	$id																	= Form::get_int("id");
+	
+	# Create Object
+	$cat																= new Category($id);
+	
+	# Delete
+	$cat->delete();
 }
 
 # ===================================================

@@ -1,1 +1,5 @@
-<div class="btn" onclick="load_contacts({{id}});" style="width: 100%; text-align: left;"><span class="glyphicon glyphicon-th" style="margin-right: 15px;"></span> {{title}}</div>
+<div class="btn" id="sub_folder_{{id}}" onclick="load_contacts({{id}});" style="width: 100%; text-align: left;">
+	<span class="glyphicon glyphicon-th" style="margin-right: 15px;"></span>
+	{{title}}
+	<span class="glyphicon glyphicon-trash btn_trash" onclick="delete_folder(event, {{parent_id}}, {{id}})"></span>
+</div>
