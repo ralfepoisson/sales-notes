@@ -1,0 +1,13 @@
+<div class="component_wrapper">
+	<h3><span class="glyphicon glyphicon-phone-alt" style="margin-right: 20px;"></span>Interactions</h3>
+	<form role="form">
+		<div class="form-group">
+			<textarea class="form-control" id="new_interaction_{{item}}"></textarea>
+			<div class="btn btn-success" style="float: right; margin-top: 5px;" onclick="add_interaction('{{item}}');">Add Interaction</div>
+		</div>
+		<div id="interaction_{{item}}">
+			{{interactions}}
+		</div>
+	</form>
+</div>
+

@@ -11,7 +11,7 @@
 # CLASS
 # ==========================================================================================
 
-class Contact extends Model {
+class Comment extends Model {
 	
 	# --------------------------------------------------------------------------------------
 	# ATTRIBUTES
@@ -32,7 +32,7 @@ class Contact extends Model {
 	 */
 	function __construct($uid=0) {
 		# Set Table
-		$this->table													= "contacts";
+		$this->table													= "comments";
 		
 		# Initialize UID from Parameter
 		$this->uid														= $uid;
@@ -41,23 +41,18 @@ class Contact extends Model {
 		}
 	}
 	
-	/**
-	 * Something
-	 */
-	public function get_name() {
-		return $this->title . " " . $this->first_name . " " . $this->last_name;
-	}
-	
-	public function get_profile() {
-		# Prepare Profile Vars
-		$vars															= $this->get_obj_array();
-		$vars["company_select"]											= generate_select("contact_company_id", company_select($this->category), $this->company);
-		$vars["tasks"]													= tasks("i" . $this->uid);
-		$vars["notes"]													= notes("i" . $this->uid);
-		$vars["interactions"]											= interactions("i" . $this->uid);
+	function display() {
+		# Get User
+		$user															= new User($this->user);
 		
 		# Generate HTML
-		$file															= dirname(dirname(dirname(__FILE__))) . "/frontend/html/contacts/contact_profile.html";
+		$file															= dirname(dirname(dirname(__FILE__))) . "/frontend/html/components/note_item.html";
+		$vars															= array(
+																					"name"		=> $user->username,
+																					"datetime"	=> $this->datetime,
+																					"message"	=> $this->comment,
+																					"id"		=> $this->uid
+																				);
 		$template														= new Template($file, $vars);
 		$html															= $template->toString();
 		

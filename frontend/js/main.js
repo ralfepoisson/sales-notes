@@ -282,3 +282,45 @@ function delete_folder(e, parent_id, folder_id) {
 	ajax_get_data("ajax.php?action=delete_folder&parent_id=" + parent_id + "&id=" + folder_id);
 }
 
+function add_note(item){
+	// Log Activity
+	logg(" [*] Adding note");
+	logg(" - Item: " + item);
+	
+	// Get Message
+	var message = $("#new_note_" + item).val();
+	
+	// Compile URL
+	var url = "ajax.php?action=add_note";
+	url += "&item=" + item;
+	url += "&comment=" + encodeURI(message);
+	
+	// AJAX Call
+	logg(" - Submitting to server");
+	var new_html = ajax_get_data(url);
+	
+	// Update the DOM
+	logg(" - prepending");
+	$("#notes_" + item).prepend(new_html);
+	
+	// Clear Form
+	$("#new_note_" + item).val("");
+	logg(" - Done.");
+}
+
+function delete_note(id) {
+	// Log Activity
+	logg(" [*] Deleting Note");
+	logg(" - Note ID: " + id);
+	
+	// Compile URL
+	var url = "ajax.php?action=delete_note&id=" + id;
+	
+	// AJAX Request
+	ajax_get_data(url);
+	
+	// Hide Note
+	$("#note_" + id).slideUp("Slow");
+	logg(" - Done.");
+}
+

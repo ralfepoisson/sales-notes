@@ -220,6 +220,43 @@ function delete_folder() {
 	$cat->delete();
 }
 
+function add_note() {
+	# Get GET Data
+	$item																= Form::get_str("item");
+	$comment															= Form::get_str("comment");
+	
+	# Create new Comment
+	$obj																= new Comment();
+	$obj->item															= $item;
+	$obj->comment														= $comment;
+	$obj->datetime														= date("Y-m-d H:i:s");
+	$obj->user															= get_user_uid();
+	$obj->active														= 1;
+	
+	# Save
+	$obj->save();
+	
+	# Generate HTML
+	$html																= $obj->display();
+	
+	# Return HTML
+	print $html;
+}
+
+function delete_note() {
+	# Get GET Data
+	$id																	= Form::get_int("id");
+	
+	# Create Note Object
+	$note																= new Comment($id);
+	
+	# Log Activity
+	logg("AJAX: Deleting Comment #{$id}.");
+	
+	# Delete
+	$note->delete();
+}
+
 # ===================================================
 # ACTION HANDLER
 # ===================================================

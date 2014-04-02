@@ -1,0 +1,26 @@
+<div class="component_wrapper" style="border-top: none;">
+	<h3><span class="glyphicon glyphicon-pushpin" style="margin-right: 20px;"></span>Tasks</h3>
+	<form role="form">
+		<div class="form-group">
+			Date<br>
+			<input type="date" class="form-control" id="task_date_{{item}}" value="{{date}}">
+		</div>
+		
+		<div class="form-group">
+			Time</br>
+			<input type="time" class="form-control" id="task_time_{{item}}" value="{{time}}">
+		</div>
+		
+		<div class="form-group">
+			Task<br>
+			<input type="text" class="form-control" id="task_task_{{item}}" placeholder="Do something">
+		</div>
+		
+		<div class="btn btn-success" style="float: right; margin-top: 5px;" onclick="add_task('{{item}}');">Add Task</div>
+	</form>
+
+	<div id="task_{{item}}">
+		{{tasks}}
+	</div>
+</div>
+

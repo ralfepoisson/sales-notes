@@ -5,14 +5,14 @@
 		<form role="form">
 			<div class="form-group">
 				<strong>Company</strong><br>
-				<span id="company_select"></span>
+				{{company_select}}
 			</div>
 			
 			<div class="form-group">
 				<strong>Name</strong><br>
 				{{title}}
-				<input class="form-control" type="test" id="contact_firstname" placeholder="First Name" style="width: 200px; display: inline;" value="{{first_name}}"> 
-				<input class="form-control" type="test" id="contact_lastname" placeholder="Last Name" style="width: 200px; display: inline;" value="{{last_name}}">
+				<input class="form-control" type="test" id="contact_firstname" placeholder="First Name" style="width: 49%; display: inline;" value="{{first_name}}"> 
+				<input class="form-control" type="test" id="contact_lastname" placeholder="Last Name" style="width: 49%; display: inline;" value="{{last_name}}">
 			</div>
 			
 			<div class="form-group">
@@ -41,7 +41,7 @@
 	</div>
 	
 	<!-- Right -->
-	<div class="col-md-3">
+	<div class="col-md-6" style="padding-left: 12px; background-color: #E5E5E5; border-left: 1px #777 solid; padding-bottom: 20px;">
 		<!-- Tasks -->
 		{{tasks}}
 		

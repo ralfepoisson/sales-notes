@@ -103,4 +103,52 @@ a.delete img {
 	color: #000
 }
 
+.component_wrapper {
+	float: left;
+	border-top: 1px #AAA solid;
+	margin-top: 5px;
+	padding-top: 5px;
+	width: 100%;
+}
+
+.note {
+	float: left;
+	width: 100%;
+	padding: 3px;
+	margin-bottom: 5px;
+	margin-top: 3px;
+	border: 1px #AAA solid;
+}
+
+.note_details {
+	float: left;
+	width: 75px;
+	text-align: center;
+}
+
+.note_message {
+	float: left;
+}
+
+.note_datetime {
+	font-size: 10px;
+}
+
+.note_delete {
+	float: right;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+.note_delete:hover {
+	color: red;
+}
+
+.modal-body {
+	max-height: 700px;
+}
+
+.modal-body {
+	overflow-y: scroll;
+}
 

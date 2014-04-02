@@ -1,0 +1,13 @@
+<div class="component_wrapper">
+	<h3><span class="glyphicon glyphicon-comment" style="margin-right: 20px;"></span>Notes</h3>
+	<form role="form">
+		<div class="form-group">
+			<textarea class="form-control" id="new_note_{{item}}"></textarea>
+			<div class="btn btn-success" style="float: right; margin-top: 5px;" onclick="add_note('{{item}}');">Add Note</div>
+		</div>
+		<div id="notes_{{item}}">
+			{{notes}}
+		</div>
+	</form>
+</div>
+
