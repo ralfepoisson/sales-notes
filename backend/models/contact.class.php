@@ -49,7 +49,16 @@ class Contact extends Model {
 	}
 	
 	public function get_profile() {
+		# Prepare Profile Vars
+		$vars															= $this->get_obj_array();
 		
+		# Generate HTML
+		$file															= dirname(dirname(dirname(__FILE__))) . "/frontend/html/contacts/contact_profile.html";
+		$template														= new Template($file, $vars);
+		$html															= $template->toString();
+		
+		# Return HTML
+		return $html;
 	}
 }
 

@@ -53,7 +53,7 @@ function add_folder() {
 	var new_html = ajax_get_data("ajax.php?action=new_folder&parent=" + parent_id + "&name=" + name);
 	
 	// Update DOM
-	if (!parent_id) {
+	if (parent_id == 0) {
 		$("#folders").append(new_html);
 	}
 	else {
@@ -116,6 +116,7 @@ function add_contact() {
 	var title = $("#new_contact_title").val();
 	var first_name = $("#new_contact_firstname").val();
 	var last_name = $("#new_contact_lastname").val();
+	var job_title = $("#new_contact_job_title").val();
 	var tel = $("#new_contact_tel").val();
 	var fax = $("#new_contact_fax").val();
 	var email = $("#new_contact_email").val();
@@ -127,6 +128,7 @@ function add_contact() {
 	url += "&title=" + title;
 	url += "&first_name=" + first_name;
 	url += "&last_name=" + last_name;
+	url += "&job_title=" + job_title;
 	url += "&tel=" + tel;
 	url += "&fax=" + fax;
 	url += "&email=" + email;
@@ -139,6 +141,7 @@ function add_contact() {
 	$("#new_contact_title").val("");
 	$("#new_contact_firstname").val("");
 	$("#new_contact_lastname").val("");
+	$("#new_contact_job_title").val("");
 	$("#new_contact_tel").val("");
 	$("#new_contact_fax").val("");
 	$("#new_contact_email").val("");

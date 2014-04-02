@@ -15,39 +15,6 @@ table.table {
 	font-size: 24px;
 }
 
-#week_listing {
-	margin-bottom: 20px;
-}
-
-.week_days_list {
-	border-left: 1px #DDD solid;
-	border-right: 1px #DDD solid;
-	border-bottom: 1px #DDD solid;
-}
-
-.workout_week {
-	width: 100%;
-}
-
-#superset_listing {
-	margin-bottom: 20px;
-	float: left;
-}
-
-.superset {
-	width: 100%;
-}
-
-.superset_exercises_list {
-	float: left;
-	padding: 10px;
-	border-left: 1px #DDD solid;
-	border-right: 1px #DDD solid;
-	border-bottom: 1px #DDD solid;
-	width: 100%;
-	min-height: 100px;
-}
-
 .drag_handle {
 	background-image: url(../img/drag_handle.png);
 	background-size: 15px 15px;
@@ -61,31 +28,6 @@ table.table {
 	cursor: move;
 }
 
-.exercise {
-	float: left;
-	width: 90px;
-	height: 90px;
-	margin: 10px;
-	padding: 5px;
-	text-align: center;
-	border: 1px #AAA solid;
-	background-color: #F1F1F1;
-	padding-top: 14px;
-	font-size: 12px;
-}
-
-.exercise_list .disabled {
-	display: none;
-}
-
-.dropdown-menu li a {
-	cursor: pointer;
-}
-
-ul.workout_week li {
-	cursor: pointer;
-}
-
 a.delete {
 	color: red;
 	cursor: pointer;
@@ -94,26 +36,6 @@ a.delete {
 a.delete img {
 	margin-left: 10px;
 	margin-top: -3px;
-}
-
-.workout_week li.active {
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-#equipment_list {
-	margin-top: 20px;
-}
-
-.exercise_equipment_item {
-	padding: 5px;
-	width: 100%;
-	border: 1px solid #AAA;
-	margin-bottom: 10px;
-}
-
-.exercise_equipment_item:hover {
-	background-color: #F1F1F1;
 }
 
 /* ================== Footer ===================== */
@@ -150,6 +72,7 @@ a.delete img {
 	width: 130px;
 	vertical-align: middle;
 	padding-top: 20px;
+	cursor: pointer;
 }
 
 .contact_icon span {

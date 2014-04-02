@@ -57,6 +57,7 @@ function add_contact() {
 	$contact->company													= Form::get_int("company");
 	$contact->first_name												= Form::get_str("first_name");
 	$contact->last_name													= Form::get_str("last_name");
+	$contact->job_title													= Form::get_str("job_title");
 	$contact->address													= Form::get_str("address");
 	$contact->tel														= Form::get_str("tel");
 	$contact->fax														= Form::get_str("fax");

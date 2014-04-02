@@ -1,0 +1,51 @@
+<div class="row">
+	<!-- Left -->
+	<div class="col-md-6">
+		<!-- Profile -->
+		<form role="form">
+			<div class="form-group">
+				<strong>Company</strong><br>
+				<span id="company_select"></span>
+			</div>
+			
+			<div class="form-group">
+				<strong>Name</strong><br>
+				{{title}}
+				<input class="form-control" type="test" id="contact_firstname" placeholder="First Name" style="width: 200px; display: inline;" value="{{first_name}}"> 
+				<input class="form-control" type="test" id="contact_lastname" placeholder="Last Name" style="width: 200px; display: inline;" value="{{last_name}}">
+			</div>
+			
+			<div class="form-group">
+				<strong>Job Title</strong><br>
+				<input class="form-control" type="test" id="contact_job_title" value="{{job_title}}">
+			</div>
+			
+			<div class="form-group">
+				<strong>Telephone</strong><br>
+				<input class="form-control" type="test" id="contact_tel" value="{{tel}}">
+			</div>
+			
+			<div class="form-group">
+				<strong>Fax</strong><br>
+				<input class="form-control" type="test" id="contact_fax" value="{{fax}}">
+			</div>
+		
+			<div class="form-group">
+				<strong>Email</strong><br>
+				<input class="form-control" type="email" id="contact_email" value="{{email}}">
+			</div>
+		</form>
+		
+		<!-- Notes -->
+		{{notes}}
+	</div>
+	
+	<!-- Right -->
+	<div class="col-md-3">
+		<!-- Tasks -->
+		{{tasks}}
+		
+		<!-- Interactions -->
+		{{interactions}}
+	</div>
+</div>

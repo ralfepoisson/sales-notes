@@ -150,7 +150,7 @@ class Model {
 				$this->table,
 				$data,
 				array(
-					"{$this->uid_field}"										=> $this->uid
+					"{$this->uid_field}"								=> $this->uid
 				)
 			);
 		}
@@ -224,6 +224,13 @@ class Model {
 		
 		# Return Where Clause
 		return $where;
+	}
+	
+	/**
+	 * Retruns the current model as an associative array
+	 */
+	public function get_obj_array() {
+		return get_object_vars($this);
 	}
 	
 }
