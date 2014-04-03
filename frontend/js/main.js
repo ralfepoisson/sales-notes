@@ -324,3 +324,33 @@ function delete_note(id) {
 	logg(" - Done.");
 }
 
+function add_task(item) {
+	// Log Activity
+	logg(" [*] Adding Task");
+	logg(" - Item: " + item);
+	
+	// Get Data
+	var date = $("#task_date_" + item).val();
+	var time = $("#task_time_" + item).val();
+	var task = $("#task_task_" + item).val();
+	
+	// Compile URL
+	var url = "ajax.php?action=add_task";
+	url += "&item=" + item;
+	url += "&date=" + encodeURI(date);
+	url += "&time=" + encodeURI(time);
+	url += "&task=" + encodeURI(task);
+	
+	// AJAX Request
+	var new_html = ajax_get_data(url);
+	
+	// Update DOM
+	$("#tasks_" + item).append(new_html);
+	
+	// Clear Form
+	$("#task_date_" + item).val();
+	$("#task_time_" + item).val();
+	$("#task_task_" + item).val();
+	logg(" - Done.");
+}
+

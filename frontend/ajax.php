@@ -257,6 +257,30 @@ function delete_note() {
 	$note->delete();
 }
 
+function add_task() {
+	# Get GET Data
+	$item																= Form::get_str("item");
+	$date																= Form::get_str("date");
+	$time																= Form::get_str("time");
+	$task																= Form::get_str("task");
+	
+	# Create Task
+	$obj																= new Task();
+	$obj->datetime														= date("Y-m-d H:i:s");
+	$obj->user															= get_user_uid();
+	$obj->item															= $item;
+	$obj->date															= $date;
+	$obj->time															= $time;
+	$obj->active														= 1;
+	$obj->save();
+	
+	# Get HTML
+	$html																= $obj->display();
+	
+	# Return HTML
+	print $html;
+}
+
 # ===================================================
 # ACTION HANDLER
 # ===================================================
